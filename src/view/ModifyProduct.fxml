@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="487.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyProduct">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f6f7f7" height="459.0" layoutX="33.0" layoutY="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="736.0" />
+      <TableView fx:id="partsTable" layoutX="412.0" layoutY="69.0" prefHeight="143.0" prefWidth="322.0">
+        <columns>
+          <TableColumn fx:id="PartIdCol" prefWidth="66.20001220703125" text="Part Id" />
+          <TableColumn fx:id="PartNameCol" prefWidth="87.0" text="Part Name" />
+            <TableColumn fx:id="partStockCol" prefWidth="91.39996337890625" text="Inventory Level" />
+            <TableColumn fx:id="partPriceCol" prefWidth="78.2000732421875" text="Price/Cost per Unit" />
+        </columns>
+      </TableView>
+      <Label layoutX="92.0" layoutY="45.0" text="Modify Product">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="92.0" layoutY="99.0" text="ID" />
+      <Label layoutX="92.0" layoutY="141.0" text="Name" />
+      <Label layoutX="92.0" layoutY="179.0" text="Inv" />
+      <Label layoutX="92.0" layoutY="217.0" text="Price" />
+      <Label layoutX="253.0" layoutY="254.0" text="Min" />
+      <Label layoutX="92.0" layoutY="254.0" text="Max" />
+      <TextField fx:id="proIdMod" disable="true" editable="false" layoutX="129.0" layoutY="95.0" prefHeight="26.0" prefWidth="111.0" promptText="Auto Gen-Disabled" />
+      <TextField fx:id="proNameModify" layoutX="129.0" layoutY="136.0" prefHeight="26.0" prefWidth="111.0" />
+      <TextField fx:id="proStockTextMod" layoutX="129.0" layoutY="175.0" prefHeight="26.0" prefWidth="111.0" />
+      <TextField fx:id="proPriceMod" layoutX="129.0" layoutY="212.0" prefHeight="26.0" prefWidth="111.0" />
+      <TextField fx:id="proMaxMod" layoutX="129.0" layoutY="249.0" prefHeight="26.0" prefWidth="111.0" />
+      <TextField fx:id="proMinMod" layoutX="277.0" layoutY="249.0" prefHeight="26.0" prefWidth="111.0" />
+      <Button layoutX="673.0" layoutY="222.0" mnemonicParsing="false" onAction="#ToAdd" text="Add" />
+      <Button layoutX="557.0" layoutY="405.0" mnemonicParsing="false" onAction="#removeAssociatedPart" text="Remove Associated Product" />
+      <Button layoutX="557.0" layoutY="441.0" mnemonicParsing="false" onAction="#ToSaveModify" text="Save" />
+      <Button layoutX="667.0" layoutY="441.0" mnemonicParsing="false" onAction="#ToCancelModify" text="Cancel" />
+      <TextField fx:id="searchPart" layoutX="573.0" layoutY="31.0" onKeyPressed="#partSearchKeyPressed" prefHeight="26.0" prefWidth="164.0" promptText="Search by ProductID or Name" />
+      <TableView fx:id="associatedPartTable" layoutX="411.0" layoutY="249.0" prefHeight="143.0" prefWidth="322.0">
+         <columns>
+            <TableColumn fx:id="assocPartIdCol" prefWidth="66.20001220703125" text="Part Id" />
+            <TableColumn fx:id="assocPartNameCol" prefWidth="87.0" text="Part Name" />
+            <TableColumn fx:id="assocPartStockCol" prefWidth="91.39996337890625" text="Inventory Level" />
+            <TableColumn fx:id="assocPartPriceCol" prefWidth="78.2000732421875" text="Price/Cost per Unit" />
+         </columns>
+      </TableView>
+      <ScrollBar layoutX="412.0" layoutY="378.0" prefHeight="14.0" prefWidth="322.0" />
+   </children>
+</AnchorPane>
